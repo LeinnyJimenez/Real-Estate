@@ -2,7 +2,7 @@ const Propiedad = require('../models/Propiedades')
 
 const getAllPropiedades = async (req, res) => {
     try {
-        const propiedades = Propiedad.find({});
+        const propiedades = await Propiedad.find({});
         res.status(200).json({propiedades})
     } catch (error) {
         res.status(500).json({msg: error})
